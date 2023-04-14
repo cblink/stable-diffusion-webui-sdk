@@ -11,9 +11,9 @@ class TestStableDiffusionWebUi extends TestCase
         parent::setUp();
 
         $app = $this->app = new \Cblink\StableDiffusionWebuiSdk\StableDiffusionWebuiApp([
-            'base_url' => 'http://192.168.1.100:7860',
-            'username' => 'cblink',
-            'password' => 'cblink'
+            'base_url' => 'http://127.0.0.1',
+            'username' => 'username',
+            'password' => 'password'
         ]);
     }
 
