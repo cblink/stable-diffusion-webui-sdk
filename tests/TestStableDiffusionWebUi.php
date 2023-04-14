@@ -11,9 +11,9 @@ class TestStableDiffusionWebUi extends TestCase
         parent::setUp();
 
         $app = $this->app = new \Cblink\StableDiffusionWebuiSdk\StableDiffusionWebuiApp([
-            'base_url' => 'http://127.0.0.1',
-            'username' => 'username',
-            'password' => 'password'
+            'base_url' => 'http://192.168.1.100:7860',
+            'username' => 'cblink',
+            'password' => 'cblink'
         ]);
     }
 
@@ -25,8 +25,7 @@ class TestStableDiffusionWebUi extends TestCase
     public function testApiModelList()
     {
         $response = $this->app->api->modelList();
-
-        var_dump($response);
+        $this->assertTrue(true);
     }
 
     /**
@@ -40,8 +39,7 @@ class TestStableDiffusionWebUi extends TestCase
         // sd_model_checkpoint 标识模型 修改使用 title 返回 null
 
         $response = $this->app->option->save(['sd_model_checkpoint' => 'v1-5-pruned-emaonly.safetensors [6ce0161689]']);
-
-        var_dump($response);
+        $this->assertTrue(true);
     }
 
     // 文生图
@@ -62,9 +60,7 @@ class TestStableDiffusionWebUi extends TestCase
             'batch_size' => 2,  // 生成批次
             'n_iter' => 1, //   批次数量
         ]);
-
-        var_dump($response);
-
+        $this->assertTrue(true);
     }
 
     /**
@@ -98,7 +94,20 @@ class TestStableDiffusionWebUi extends TestCase
             'batch_size' => 3,  // 生成批次
             'n_iter' => 1, //   批次数量
         ]);
-        var_dump($response);
+        $this->assertTrue(true);
+    }
+
+    /**
+     * 采样器列表
+     *
+     * @return void
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function testApiOptionSamplersList()
+    {
+        $response = $this->app->option->getSamplers();
+
+        $this->assertTrue(true);
     }
 
 

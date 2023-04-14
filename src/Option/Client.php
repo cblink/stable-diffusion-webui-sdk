@@ -29,4 +29,16 @@ class Client extends \Cblink\Service\Foundation\BaseApi
         return $this->httpPost('/sdapi/v1/options', $data);
     }
 
+    /**
+     * 采样器列表
+     *
+     * @param array $data
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getSamplers(array $data= [])
+    {
+        return $this->httpGet('/sdapi/v1/samplers', $data);
+    }
+
 }

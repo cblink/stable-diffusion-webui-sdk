@@ -1,0 +1,1 @@
+{"version":1,"defects":{"TestStableDiffusionWebUi::testApiSetOption":5,"TestStableDiffusionWebUi::testApiOptionList":5},"times":{"TestStableDiffusionWebUi::testApiSetOption":0.617,"TestStableDiffusionWebUi::testApiOptionList":0.395}}
